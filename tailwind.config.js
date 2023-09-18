@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: '#73ACCA',
-        onPrimary: '#141F24',
+        onPrimary: '#004066',
         secondary: '#A2BCCB',
         onSecondary: '#334041',
         tertiary: '#77CAA2',
@@ -14,7 +15,7 @@ export default {
         neutral: '#8f9193'
       },
       boxShadow: {
-        primaria: '0 5px 0 #141F24',
+        primaria: '0 5px 0 #004066',
         secundaria: '0 5px 0 #334041',
         terciaria: '0 5px 0 #172921',
       },
