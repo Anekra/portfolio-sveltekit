@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply dark:bg-dark dark:text-white
+}
+a, h1 {
+  @apply font-sans
+}
+p {
+  @apply font-serif
+}
 .nav {
   @apply w-full flex justify-between bg-primary
 }
@@ -9,10 +18,10 @@
   @apply px-4 py-2 rounded-[10px] font-bold;
 }
 .btn:active {
-  @apply shadow-none translate-y-[5px];
+  @apply shadow-none dark:shadow-none translate-y-[5px];
 }
 .btn-primary {
-  @apply shadow-primaria bg-primary text-onPrimary;
+  @apply shadow-primaria dark:shadow-onPrimaria bg-primary text-onPrimary dark:bg-onPrimary dark:text-primary;
 }
 .btn-secondary {
   @apply shadow-secundaria bg-secondary text-onSecondary;

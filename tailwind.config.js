@@ -16,6 +16,7 @@ export default {
       },
       boxShadow: {
         primaria: '0 5px 0 #004066',
+        onPrimaria: '0 5px 0 #73ACCA',
         secundaria: '0 5px 0 #334041',
         terciaria: '0 5px 0 #172921',
       },
@@ -24,10 +25,14 @@ export default {
         secondary: '#A2BCCB',
         tertiary: '#77CAA2',
         error: '#ff5449',
-        neutral: '#8f9193'
-      }
+        neutral: '#8f9193',
+        dark: '#191C1E'
+      },
+      fontFamily: {
+        sans: ['Andika', 'sans-serif'],
+        serif: ['Baskervville', 'serif'],
+      },
     },
   },
   plugins: [],
 }
-
