@@ -15,8 +15,8 @@ export default {
         neutral: '#8f9193'
       },
       boxShadow: {
-        primaria: '0 5px 0 #004066',
-        onPrimaria: '0 5px 0 #73ACCA',
+        primaria: '0 5px 0 #3A89B1',
+        darkPrimaria: '0 5px 0 #002942',
         secundaria: '0 5px 0 #334041',
         terciaria: '0 5px 0 #172921',
       },

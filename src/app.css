@@ -21,7 +21,7 @@ p {
   @apply shadow-none dark:shadow-none translate-y-[5px];
 }
 .btn-primary {
-  @apply shadow-primaria dark:shadow-onPrimaria bg-primary text-onPrimary dark:bg-onPrimary dark:text-primary;
+  @apply shadow-primaria dark:shadow-darkPrimaria bg-primary text-onPrimary dark:bg-onPrimary dark:text-primary;
 }
 .btn-secondary {
   @apply shadow-secundaria bg-secondary text-onSecondary;
