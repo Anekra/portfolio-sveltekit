@@ -1,5 +1,15 @@
-<main class="px-12 py-6">
-  <h1 class="text-9xl">Andika Eka Putra</h1>
-  <p class="text-9xl">Hi, there</p>
-  <button class="btn btn-primary">HELLO</button>
+<script>
+	import AboutSection from './AboutSection.svelte';
+	import CertificateSection from './CertificateSection.svelte';
+	import MainSection from './MainSection.svelte';
+	import PortfolioSection from './PortfolioSection.svelte';
+	import SkillSection from './SkillSection.svelte';
+</script>
+
+<main>
+	<MainSection />
+	<PortfolioSection />
+	<AboutSection />
+	<CertificateSection />
+	<SkillSection />
 </main>
