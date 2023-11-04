@@ -24,9 +24,9 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
 		"postcss": "^8.4.29",
-		"prettier": "^2.8.8",
+		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
-		"prettier-plugin-tailwindcss": "^0.3.0",
+		"prettier-plugin-tailwindcss": "^0.4.1",
 		"sass": "^1.67.0",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
@@ -35,5 +35,10 @@
 		"vite": "^4.4.2",
 		"vitest": "^0.32.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@aws-sdk/client-s3": "^3.441.0",
+		"@aws-sdk/s3-request-presigner": "^3.441.0",
+		"nodemailer": "^6.9.7"
+	}
 }
