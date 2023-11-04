@@ -11,3 +11,4 @@ vite.config.ts.timestamp-*
 .npmrc
 .vscode
 src/lib/assets/images
+src/lib/assets/files
