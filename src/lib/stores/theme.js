@@ -20,9 +20,7 @@ if (browser) {
 }
 
 theme.subscribe(
-  /**
-   * @param {boolean} value
-   */
+  /** @param {boolean} value */
   (value) => {
     if (browser) {
       localStorage.theme = value ? 'dark' : 'light'
