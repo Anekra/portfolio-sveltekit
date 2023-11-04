@@ -3,35 +3,86 @@
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth overflow-x-hidden
+	@apply overflow-y-auto overflow-x-hidden scroll-smooth;
 }
 body {
-  @apply cursor-none dark:bg-dark bg-light font-serif font-semibold dark:text-white flex flex-col
+	@apply relative flex min-h-screen flex-col bg-light font-serif font-semibold dark:bg-dark dark:text-white;
 }
-a, h1, h2, h3 {
-  @apply font-sans
+body.modal-open {
+	@apply !overflow-hidden;
 }
-h1, h2, p {
-  @apply hover:cursor-text
+body.modal-open header {
+	@apply -translate-y-full;
+}
+a,
+h1,
+h2,
+h3,
+label {
+	@apply font-sans;
 }
 .nav {
-  @apply w-full flex justify-between bg-primary
+	@apply flex w-full justify-between bg-primary;
 }
 .btn {
-  @apply p-2 bg-transparent rounded-[10px] font-bold transition-all;
+	@apply rounded-lg bg-transparent p-1 transition-all;
 }
-.btn:hover {
-  @apply shadow-[0_4px_8px_0_rgb(0,0,0)] ;
+@media (hover: hover) {
+	.btn:hover {
+		@apply shadow-[0_4px_8px_0_rgb(0,0,0)];
+	}
 }
-.btn:active {
-  @apply shadow-none dark:shadow-none translate-y-[5px];
+.btn:enabled:active {
+	@apply translate-y-[5px] shadow-none dark:shadow-none;
 }
 .btn-primary {
-  @apply shadow-primaria dark:shadow-darkPrimaria bg-primary text-onPrimary dark:bg-onPrimary dark:text-primary;
+	@apply rounded-lg bg-onPrimary p-1 px-4 py-2 font-sans text-light shadow-onPrimaria transition-all dark:bg-secondary dark:text-onPrimary dark:shadow-secundaria;
 }
-.btn-secondary {
-  @apply shadow-secundaria bg-secondary text-onSecondary;
+.btn-primary:enabled:active {
+	@apply translate-y-[5px] shadow-none dark:shadow-none;
 }
-.btn-tertiary {
-  @apply shadow-terciaria bg-tertiary text-onTertiary;
+.btn-primary:disabled {
+	@apply opacity-50;
+}
+.hide {
+	opacity: 0;
+	filter: blur(1);
+	transition: all 1s;
+}
+.hide-from-left {
+	opacity: 0;
+	filter: blur(1);
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+.hide-from-right {
+	opacity: 0;
+	filter: blur(1);
+	transform: translateX(100%);
+	transition: all 1s;
+}
+.hide-from-bottom {
+	opacity: 0;
+	filter: blur(1);
+	transform: translateY(100%);
+	transition: all 1s;
+}
+.show {
+	opacity: 100;
+	filter: blur(0);
+	transform: translate(0);
+}
+@media (prefers-reduced-motion) {
+	.hide,
+	.hide-from-left,
+	.hide-from-right,
+	.hide-from-bottom {
+		transition: none;
+	}
+}
+.input {
+	@apply w-[280px] rounded border bg-white/50 p-2 outline-none dark:placeholder:text-gray-500 focus:border-transparent focus:bg-primaryContainer/50 focus:text-white dark:bg-primaryContainer/30 dark:focus:border-transparent dark:focus:bg-secondary/20 sm:w-[400px] md:h-10;
+}
+.textarea {
+	@apply w-[280px] rounded border bg-white/50 p-2 outline-none dark:placeholder:text-gray-500 focus:border-transparent focus:bg-primaryContainer/50 focus:text-white dark:bg-primaryContainer/30 dark:focus:border-transparent dark:focus:bg-secondary/20 sm:w-[400px];
 }
