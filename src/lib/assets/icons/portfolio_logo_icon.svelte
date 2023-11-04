@@ -4,7 +4,7 @@
 	$: mainColor = `${color}`
 </script>
 
-<svg width="53" height="57" viewBox="0 0 73 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="w-[31px] h-[37px] sm:w-[51px] sm:h-[57px]" viewBox="0 0 73 77" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path
 		d="M4.8667 70.0632H42.7572L40.3238 63.1262C40.3238 64.1668 24.3334 63.8199 13.2096 63.8199L4.8667 70.0632Z"
 		fill="gray"
@@ -18,5 +18,4 @@
 		d="M42.7571 70.063H51.4476L28.1571 6.59009H19.4667L34.3111 47.1712H36.1524L38.5857 53.7612H36.7426L42.7571 70.063Z"
 		fill={mainColor}
 	/>
-	<rect x="0.5" y="0.5" width="72" height="76" rx="9.5" stroke={mainColor} />
 </svg>
