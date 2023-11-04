@@ -1,51 +1,36 @@
 <script>
-	import photo from '$lib/assets/images/portfolio_profile1.png';
-	import GradientBackground from '$lib/components/GradientBackground.svelte';
 	import { theme as darkMode } from '$lib/stores/theme';
-	import { handleFocus } from '$lib/utils/handleFocus';
-	import { handleHover } from '$lib/utils/handleHover';
 
 	$: color = `${$darkMode ? 'white' : ''}`;
+
+	export let /** @type {string} */ image;
 </script>
 
-<section class="relative" id="homeMainSection">
-	<GradientBackground
-		mainColor={$darkMode ? '#0F1A19' : '#73ACCA'}
-		secondaryColor={$darkMode ? '#214550' : '#C7D9E2'}
-	/>
-	<div class="flex items-center pt-16">
-		<article class="flex w-1/2 flex-col px-44 py-8">
-			<h2
-				class="w-fit text-2xl font-bold text-onPrimary dark:text-secondary"
-				on:mouseover={handleHover}
-				on:mouseleave={handleHover}
-				on:focus={() => handleFocus}
-			>
-				Hi, I'm
-			</h2>
+<div
+	class="bg-gradient-to-r from-[#73ACCA] to-[#C7D9E2] px-8 pt-16 dark:from-[#0F1A19] dark:to-[#214550] md:h-screen md:px-16 lg:mb-12 lg:px-36 xl:px-44"
+	id="homeMainSection"
+	style="--firstColor:{$darkMode ? '#0F1A19' : '#73ACCA'}; --secondColor:{$darkMode
+		? '#214550'
+		: '#C7D9E2'};"
+>
+	<div class="main-container h-full flex mobile:flex-col items-center justify-between">
+		<article class="text-container flex flex-col sm:py-8 mobile:order-2">
+			<h2 class="w-20 font-bold text-onPrimary dark:text-secondary sm:text-2xl">Hi, I'm</h2>
 			<div class="typing font-sans" style="--textColor:{color};" />
-			<p
-				class="w-[280px] pt-2 text-lg text-onPrimary dark:text-secondary"
-				on:mouseover={handleHover}
-				on:mouseleave={handleHover}
-				on:focus={() => handleFocus}
-			>
+			<p class="w-[250px] mobile:w-full pt-2 text-sm text-onPrimary dark:text-secondary sm:w-[270px] sm:text-lg">
 				I like to develop web and android applications from the ground up starting from initial
 				requirement analysis through to design, implementation, deployment and ongoing maintenance.
 			</p>
 		</article>
-		<div class="flex-grow">
+		<div class="profile-container sm:self-end mobile:!static mobile:order-1">
 			<img
-				src={photo}
+				src={image}
 				alt="Main Profile"
-				class="max-h-[calc(100vh-64px)] w-fit cursor-default align-bottom grayscale transition-[filter] duration-300 hover:filter-none"
-				on:mouseover={handleHover}
-				on:mouseleave={handleHover}
-				on:focus={() => handleFocus}
+				class="max-h-[calc(100vh-64px)] grayscale transition-[filter] duration-300 hover:filter-none"
 			/>
 		</div>
 	</div>
-</section>
+</div>
 
 <style lang="scss">
 	$strings: ('Andika Eka Putra' 'a Full Stack Web Developer' 'a Android Developer');
@@ -135,6 +120,7 @@
 	}
 	.typing {
 		display: flex;
+		height: calc(20px + 2vw);
 		justify-content: flex-start;
 		font-size: calc(10px + 2vw);
 		color: var(--textColor);
@@ -142,13 +128,38 @@
 		-moz-osx-font-smoothing: grayscale;
 		&::after {
 			content: '​';
-			position: relative;
+			position: absolute;
 			display: inline-block;
 			padding-right: 3px;
 			border-right: 4px solid var(--textColor);
 			text-shadow: 0 0 5px var(--textColor);
 			white-space: nowrap;
 			animation: typed #{$timeTotal + 's'} linear 1s infinite, beam-blink 1s infinite;
+		}
+	}
+
+	@media (max-width: 485px) {
+		.text-container {
+			display: flex;
+			padding: 28px 0px 28px 28px;
+			width: 100%;
+		}
+		.text-container h2 {
+			width: 60px;
+		}
+		.text-container div.typing {
+			left: 78px;
+			top: 14px;
+		}
+		.text-container p {
+			max-width: 100%;
+		}
+		.profile-container {
+			position: absolute;
+			right: 5%;
+			height: 140px;
+			width: 140px;
+			clip-path: circle();
 		}
 	}
 </style>
